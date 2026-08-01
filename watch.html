@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Loading... | TubeBlog</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Plyr CSS -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css">
+
+</head>
+<body>
+
+<header class="header">
+
+    <div class="container">
+
+        <h1 class="logo">
+            <a href="index.html">TubeBlog</a>
+        </h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="latest.html">Latest</a>
+            <a href="categories.html">Categories</a>
+        </nav>
+
+    </div>
+
+</header>
+
+<main class="container">
+
+    <section class="player-section">
+
+        <video
+            id="player"
+            class="plyr"
+            controls
+            playsinline
+            preload="metadata"
+            poster=""
+            crossorigin="anonymous">
+        </video>
+
+    </section>
+
+    <section class="movie-details">
+
+        <h1 id="title">Loading...</h1>
+
+        <p>
+            <strong>Category:</strong>
+            <span id="category">-</span>
+        </p>
+
+        <p>
+            <strong>Actors:</strong>
+            <span id="actors">-</span>
+        </p>
+
+        <p>
+            <strong>Tags:</strong>
+            <span id="tags">-</span>
+        </p>
+
+    </section>
+
+    <section class="related-section">
+
+        <h2>Related Videos</h2>
+
+        <div id="related-grid" class="movie-grid">
+
+            <!-- Related videos -->
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+    <div class="container">
+
+        TubeBlog © 2026
+
+    </div>
+
+</footer>
+
+<!-- HLS.js -->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<!-- Plyr -->
+<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.polyfilled.min.js"></script>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/components.js"></script>
+<script src="assets/js/home.js"></script>
+
+</body>
+</html>
