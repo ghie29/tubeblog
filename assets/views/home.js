@@ -6,24 +6,21 @@ async function renderHome() {
     console.log("renderHome START");
 
 
-    const grid = document.getElementById("movie-grid");
+    const app = document.getElementById("app");
 
 
-    console.log("GRID:", grid);
+    if (!app) {
 
-
-
-    if (!grid) {
-
-        console.log("movie-grid not found");
+        console.log("app not found");
 
         return;
 
     }
 
 
-    grid.innerHTML = "<h2>Loading movies...</h2>";
-
+    app.innerHTML = `
+        <h2>Loading movies...</h2>
+    `;
 
 
     try {
@@ -36,7 +33,10 @@ async function renderHome() {
 
 
 
-        console.log("API RESULT:", result);
+        console.log(
+            "API RESULT:",
+            result
+        );
 
 
 
@@ -50,13 +50,39 @@ async function renderHome() {
 
 
 
+        app.innerHTML = `
+
+            <h1>
+                Latest Movies
+            </h1>
+
+
+            <div
+                id="movie-grid"
+                class="movie-grid">
+            </div>
+
+        `;
+
+
+
+        const grid =
+            document.getElementById(
+                "movie-grid"
+            );
+
+
+
         renderMovieGrid(
             grid,
             result.movies
         );
 
 
-        console.log("MOVIES RENDERED");
+
+        console.log(
+            "MOVIES RENDERED"
+        );
 
 
     }
@@ -70,8 +96,13 @@ async function renderHome() {
         );
 
 
-        grid.innerHTML =
-        "<h2>Unable to load videos.</h2>";
+        app.innerHTML = `
+
+            <h2>
+                Unable to load videos.
+            </h2>
+
+        `;
 
 
     }
