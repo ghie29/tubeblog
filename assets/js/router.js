@@ -4,74 +4,158 @@ TubeBlog Router
 =========================================
 */
 
+console.log("ROUTER LOADED");
+
+
 window.addEventListener("DOMContentLoaded", () => {
+
+    console.log("DOM READY");
+
 
     const path = location.pathname.toLowerCase();
 
-    // Home
+    console.log("CURRENT PATH:", path);
+
+
+
+    // HOME
     if (
         path === "/" ||
-        path.endsWith("/index.html") ||
-        path === ""
+        path.endsWith("/index.html")
     ) {
 
+        console.log("HOME ROUTE");
+
+
         if (typeof renderHome === "function") {
+
+            console.log("CALLING renderHome()");
+
             renderHome();
+
+        } else {
+
+            console.log("renderHome() not found");
+
         }
 
+
         return;
+
     }
 
-    // Latest
+
+
+
+    // LATEST
     if (path.endsWith("/latest.html")) {
 
+        console.log("LATEST ROUTE");
+
+
         if (typeof renderLatest === "function") {
+
             renderLatest();
+
         }
 
+
         return;
+
     }
 
-    // Categories
+
+
+
+
+    // CATEGORIES
     if (path.endsWith("/categories.html")) {
 
+        console.log("CATEGORIES ROUTE");
+
+
         if (typeof renderCategories === "function") {
+
             renderCategories();
+
         }
 
+
         return;
+
     }
 
-    // Single Category
+
+
+
+
+    // CATEGORY
     if (path.endsWith("/category.html")) {
 
+        console.log("CATEGORY ROUTE");
+
+
         if (typeof renderCategory === "function") {
+
             renderCategory();
+
         }
 
-        return;
-    }
-
-    // Watch
-    if (path.endsWith("/watch.html")) {
-
-        if (typeof renderWatch === "function") {
-            renderWatch();
-        }
 
         return;
+
     }
 
-    // Search
+
+
+
+
+    // SEARCH
     if (path.endsWith("/search.html")) {
 
+        console.log("SEARCH ROUTE");
+
+
         if (typeof renderSearch === "function") {
+
             renderSearch();
+
         }
 
+
         return;
+
     }
 
-    console.log("No matching route:", path);
+
+
+
+
+    // WATCH
+    if (path.endsWith("/watch.html")) {
+
+        console.log("WATCH ROUTE");
+
+
+        if (typeof renderWatch === "function") {
+
+            renderWatch();
+
+        }
+
+
+        return;
+
+    }
+
+
+
+
+
+    console.log(
+        "NO ROUTE MATCH:",
+        path
+    );
+
 
 });
