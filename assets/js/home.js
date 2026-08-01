@@ -30,8 +30,6 @@ async function loadMovies() {
 
 function renderMovies(movies) {
 
-    grid.innerHTML = "";
-
-    renderMovieGrid(grid, result.movies);
+    renderMovieGrid(grid, movies);
 
 }
