@@ -1,85 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Latest Movies - TubeBlog</title>
-
-<link rel="stylesheet" href="assets/css/style.css">
-
-</head>
-
-
-<body>
-
-
-<header class="header">
-
-<div class="container">
-
-<h1 class="logo">
-
-<a href="index.html">
-TubeBlog
-</a>
-
-</h1>
-
-
-<nav>
-
-<a href="index.html">Home</a>
-
-<a href="latest.html">Latest</a>
-
-<a href="categories.html">Categories</a>
-
-</nav>
-
-
-</div>
-
-</header>
-
-
-
 <main class="container">
 
+    <h1>Latest Movies</h1>
 
-<h1>
-Latest Movies
-</h1>
-
-
-<div id="movie-grid" class="movie-grid">
-
-</div>
-
+    <div id="movie-grid" class="movie-grid"></div>
 
 </main>
 
+<script src="assets/js/api.js"></script>
+<script src="assets/js/components.js"></script>
 
+<script src="assets/js/views/home.js"></script>
+<script src="assets/js/views/latest.js"></script>
+<script src="assets/js/views/categories.js"></script>
+<script src="assets/js/views/category.js"></script>
+<script src="assets/js/views/search.js"></script>
+<script src="assets/js/views/watch.js"></script>
 
-<footer>
-
-<div class="container">
-
-TubeBlog © 2026
-
-</div>
-
-</footer>
-
-
-
-<script src="https://cdn.jsdelivr.net/gh/ghie29/tubeblog@main/assets/js/api.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ghie29/tubeblog@main/assets/js/components.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/ghie29/tubeblog@main/assets/js/home.js"></script>
-
-
-</body>
-
-</html>
+<script src="assets/js/router.js"></script>

@@ -1,4 +1,4 @@
-async function renderHome() {
+async function renderLatest() {
 
     const grid = document.getElementById("movie-grid");
 
@@ -8,10 +8,10 @@ async function renderHome() {
 
     try {
 
-        const result = await API.getMovies();
+        const result = await API.getMovies(1);
 
         if (!result.success) {
-            throw new Error("Unable to load movies");
+            throw new Error("Unable to load latest movies");
         }
 
         renderMovieGrid(grid, result.movies);
@@ -20,7 +20,7 @@ async function renderHome() {
 
         console.error(err);
 
-        grid.innerHTML = "<h2>Unable to load videos.</h2>";
+        grid.innerHTML = "<h2>Unable to load latest movies.</h2>";
 
     }
 
