@@ -1,45 +1,80 @@
+console.log("HOME VIEW LOADED");
+
+
 async function renderHome() {
 
-    const app = document.getElementById("app");
+    console.log("renderHome START");
 
-    app.innerHTML = `
-        <h2>Loading...</h2>
-    `;
+
+    const grid = document.getElementById("movie-grid");
+
+
+    console.log("GRID:", grid);
+
+
+
+    if (!grid) {
+
+        console.log("movie-grid not found");
+
+        return;
+
+    }
+
+
+    grid.innerHTML = "<h2>Loading movies...</h2>";
+
+
 
     try {
 
+
+        console.log("CALLING API");
+
+
         const result = await API.getMovies();
 
-        if (!result.success)
-            throw new Error();
 
-        app.innerHTML = `
 
-            <h2>Latest Movies</h2>
+        console.log("API RESULT:", result);
 
-            <div
-                id="movie-grid"
-                class="movie-grid">
-            </div>
 
-        `;
+
+        if (!result.success) {
+
+            throw new Error(
+                "API failed"
+            );
+
+        }
+
+
 
         renderMovieGrid(
-
-            document.getElementById("movie-grid"),
-
+            grid,
             result.movies
-
         );
 
-    }
 
-    catch (err) {
+        console.log("MOVIES RENDERED");
 
-        app.innerHTML = `
-            <h2>Unable to load videos.</h2>
-        `;
 
     }
+
+    catch(err) {
+
+
+        console.error(
+            "HOME ERROR:",
+            err
+        );
+
+
+        grid.innerHTML =
+        "<h2>Unable to load videos.</h2>";
+
+
+    }
+
 
 }
