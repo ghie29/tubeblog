@@ -1,5 +1,3 @@
-console.log("HOME.JS LOADED");
-
 const grid = document.getElementById("movie-grid");
 
 if (grid) {
