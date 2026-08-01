@@ -1,6 +1,8 @@
 const grid = document.getElementById("movie-grid");
 
-loadMovies();
+if (grid) {
+    loadMovies();
+}
 
 async function loadMovies() {
 
@@ -20,15 +22,15 @@ async function loadMovies() {
 
         console.error(err);
 
-        grid.innerHTML = `
-            <h2>Unable to load videos.</h2>
-        `;
+        grid.innerHTML = "<h2>Unable to load videos.</h2>";
 
     }
 
 }
 
 function renderMovies(movies) {
+
+    grid.innerHTML = "";
 
     renderMovieGrid(grid, movies);
 
